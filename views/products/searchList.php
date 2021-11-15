@@ -29,7 +29,7 @@
                         <td><?= $product['quantity'] ?></td>
                         <td><?= $product['date'] ?></td>
                         <td><?= $product['description'] ?></td>
-
+                        <td><a type="button" class="btn btn-success" href="index.php?page=product-detail&id=<?php echo $product["id"] ?>">Detail</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>

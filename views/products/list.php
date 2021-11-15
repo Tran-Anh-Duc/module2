@@ -3,13 +3,15 @@
 <div class="card" ">
     <div class="card-body">
         <h5 class="card-title">product list</h5>
-<!--        <a href="#" class="btn btn-primary">Go somewhere</a>-->
-        <form method="get">
-            <input style="margin-left: 750px" type="text" name="search" > <button type="submit" class="btn btn-primary type="">Search</button>
-        </form>
-        <a href="index.php?page=product-create">
-            <button type="button" class="btn btn-primary">ADD</button>
-        </a>
+<div style="position: relative;margin-bottom: 60px ">
+    <form method="get" style="position:absolute;margin-bottom: 10px">
+        <input style="margin-left: 750px" type="text" name="search" > <button type="submit" class="btn btn-primary type="">Search</button>
+    </form>
+    <a href="index.php?page=product-create" style="position: absolute">
+        <button type="button" class="btn btn-primary">ADD</button>
+    </a>
+</div>
+
         <table class="table table-dark">
             <thead>
             <tr>
@@ -25,9 +27,10 @@
             </thead>
             <tbody>
             <?php if (isset($products)): ?>
-                <?php foreach ($products as $product): ?>
+                <?php foreach ($products as $key=>$product): ?>
                     <tr>
-                        <td><?= $product['id'] ?></td>
+<!--                        <td>--><?//= $product['id'] ?><!--</td>-->
+                        <td><?= $key+1 ?></td>
                         <td><?= $product['name'] ?></td>
                         <td><?= $product['category'] ?></td>
                         <td><?= number_format($product['price']) ?> VND</td>
