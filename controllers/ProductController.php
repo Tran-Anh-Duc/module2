@@ -70,6 +70,12 @@ class ProductController
         $product = $this->productModel->getById($id);
         include_once "views/products/product-detail.php";
     }
+    public function search($key)
+    {
+        $products = $this->productModel->search($key);
+        include "views/products/searchList.php";
+
+    }
 
 
 }

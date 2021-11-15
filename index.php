@@ -4,6 +4,7 @@ include_once "controllers/ProductController.php";
 
 $productController = new ProductController();
 $page = (isset($_GET["page"]) ? $_GET['page'] : "");
+$search = $_REQUEST['search'] ?? null;
 ?>
 
 <!doctype html>
@@ -22,12 +23,12 @@ $page = (isset($_GET["page"]) ? $_GET['page'] : "");
 <!--    <a href="index.php?page=product-list">product</a>-->
 <!--</div>-->
 <style>
-    .content{
+    body{
         background-image: url("image/15.jpg");
     }
 
 </style>
-<div class="content">
+
 
 
 <?php
@@ -58,7 +59,12 @@ switch ($page) {
         $productController->showDetail($id);
         break;
     default :
-        $productController->index();
+        if ($search == null){
+            $productController->index();
+        }else{
+            $productController->search($search);
+        }
+        break;
 }
 
 ?>
@@ -67,6 +73,6 @@ switch ($page) {
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
-</div>
+
 </body>
 </html>

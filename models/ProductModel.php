@@ -33,4 +33,11 @@ class ProductModel  extends  BaseModel
         $stmt->execute();
     }
 
+    public function search($key)
+    {
+        $sql = "SELECT * FROM $this->table WHERE `name` LIKE '%$key%'";
+        $stmt = $this->dbConnect->query($sql);
+        return $stmt->fetchAll();
+    }
+
 }

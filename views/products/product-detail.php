@@ -16,11 +16,12 @@
         }
 
         .card button {
+            border-radius: 10%;
             border: none;
             outline: 0;
             padding: 12px;
             color: white;
-            background-color: #000;
+            background-color: greenyellow;
             text-align: center;
             cursor: pointer;
             width: 100%;
@@ -38,13 +39,13 @@
 
 <div class="card">
     <img src="" alt="" ">
-    <h1><?= $product["name"]; ?></h1>
-    <p class="price"><?= $product["price"]; ?></p>
-    <p><?= $product["description"]; ?></p>
-    <p><?= $product["category"]; ?></p>
-    <p><?= $product["quantity"]; ?></p>
-    <p><?= $product["date"]; ?></p>
-    <p><button>Add to Cart</button></p>
+    <h1>Tên sản phẩm :<?= $product["name"]; ?></h1>
+    <p class="price">Giá sản phẩm : <?= number_format($product["price"]); ?> VND</p>
+    <p>Mô tả sản phẩm :<?= $product["description"]; ?></p>
+    <p>Loại sản phẩm : <?= $product["category"]; ?></p>
+    <p>Số lượng sản phẩm :<?= $product["quantity"]; ?></p>
+    <p>Ngày đăng sản phẩm : <?= $product["date"]; ?></p>
+    <a type="button" class="btn btn-info" href="index.php"><button>back</button></a>
 </div>
 
 </body>

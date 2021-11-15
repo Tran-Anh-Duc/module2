@@ -1,15 +1,10 @@
-
 <div class="container" style="margin-top: 50px">
-<div class="card" ">
+    <div class="card" ">
     <div class="card-body">
         <h5 class="card-title">product list</h5>
-<!--        <a href="#" class="btn btn-primary">Go somewhere</a>-->
-        <form method="get">
-            <input style="margin-left: 750px" type="text" name="search" > <button type="submit" class="btn btn-primary type="">Search</button>
-        </form>
-        <a href="index.php?page=product-create">
-            <button type="button" class="btn btn-primary">ADD</button>
-        </a>
+        <!--        <a href="#" class="btn btn-primary">Go somewhere</a>-->
+        <a href="index.php" >
+            <button type="button" class="btn btn-primary">back</button></a>
         <table class="table table-dark">
             <thead>
             <tr>
@@ -34,10 +29,7 @@
                         <td><?= $product['quantity'] ?></td>
                         <td><?= $product['date'] ?></td>
                         <td><?= $product['description'] ?></td>
-                        <td><a type="button" class="btn btn-success" href="index.php?page=product-detail&id=<?php echo $product["id"] ?>">Detail</a></td>
-                        <td><a type="button" class="btn btn-danger" onclick="return confirm('are you sure')"
-                               href="index.php?page=product-delete&id=<?php echo $product["id"] ?>">Delete</a></td>
-                        <td><a type="button" class="btn btn-warning" href="index.php?page=product-edit&id=<?php echo $product["id"] ?>">Edit</a></td>
+
                     </tr>
                 <?php endforeach; ?>
             <?php else: ?>
@@ -50,8 +42,3 @@
     </div>
 </div>
 </div>
-
-
-
-
-
